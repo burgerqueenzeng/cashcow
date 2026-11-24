@@ -30,8 +30,9 @@ TOP_TICKERS = ["AAPL", "MSFT", "NVDA", "AMZN", "META", "GOOGL", "TSLA", "NFLX"]
 
 
 def _pct_change(ticker: str) -> dict:
-    end = date.today()
-    start = end - timedelta(days=5)
+    # end must be tomorrow for yfinance to include today's close
+    end = date.today() + timedelta(days=1)
+    start = end - timedelta(days=7)
     hist = yf.Ticker(ticker).history(start=start, end=end)
     if len(hist) < 2:
         return {"ticker": ticker, "close": None, "change_pct": None}
