@@ -6,7 +6,7 @@ set -e
 cd "$(dirname "$0")"
 
 # Fetch market data
-pip3 install yfinance pandas --quiet > /dev/null 2>&1
+pip3 install yfinance pandas --break-system-packages --quiet > /dev/null 2>&1
 SUMMARY=$(python3 fetch_summary.py)
 
 # Generate review with local Claude Code

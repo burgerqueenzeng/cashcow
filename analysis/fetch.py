@@ -9,7 +9,7 @@ INDICES = {
     "QQQ": "Nasdaq 100",
     "DIA": "Dow Jones",
     "IWM": "Russell 2000",
-    "VIX": "VIX",
+    "^VIX": "VIX",
 }
 
 SECTORS = {
