@@ -48,7 +48,7 @@ def generate_review(summary: str) -> dict:
     prompt = PROMPT_TEMPLATE.format(summary=summary)
 
     message = client.messages.create(
-        model="claude-opus-4-6",
+        model="claude-haiku-4-5-20251001",
         max_tokens=2048,
         system=SYSTEM,
         messages=[{"role": "user", "content": prompt}],
